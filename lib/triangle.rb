@@ -31,7 +31,18 @@ class Triangle
   
   #so what is a valid triangle?
   
-  
+  def equilateral?
+    true if sides.uniq.count == 1
+  end
+
+  def isosceles?
+    true if sides.uniq.count == 2
+  end
+
+  def scalene?
+    true if sides.uniq.count == 3
+  end
+  #^^^tried to put them in one def but it didnt flag the pass? need to figure out if I was using the elsif correctly? will mess in repl more but this got the pass so...smells cody a bit but pass is pass 
   
   class TriangleError < StandardError
     def error_msg
