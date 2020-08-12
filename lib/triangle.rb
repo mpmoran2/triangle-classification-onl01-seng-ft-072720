@@ -21,7 +21,18 @@ class Triangle
       :scalene
     end
   end
-
+  
+  def invalid? #if it flags any of this, get the error.
+    if (self.sides.any?{ |side| side <= 0} || self.side1 + self.side2 <= side3 ||
+      self.side2 + self.side3 <= side1 || self.side3 + self.side1 <= side2)
+      true 
+    end
+  end
+  
+  #so what is a valid triangle?
+  
+  
+  
   class TriangleError < StandardError
     def error_msg
       puts "This is no triangle!"
