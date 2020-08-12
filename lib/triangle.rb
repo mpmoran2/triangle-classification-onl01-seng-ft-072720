@@ -1,7 +1,7 @@
 require 'pry'
 
 class Triangle
-  attr_accessor :sX, :sY, :sZ, :sides
+  attr_accessor :sX, :sY, :sZ, :sides #pathagrium sides. x,y,z
 
   def initialize(sX, sY, sZ)
     @sX = sX
@@ -10,19 +10,17 @@ class Triangle
     @sides = [sX, sY, sZ]
   end
 
-  def kind
-    if self.invalid?
+  def kind #make it easy, use self more like been doing. self is your friend
+    if self.invalid? #make sure to define what invalid is
         raise TriangleError
-    else
-      if valid_tri? == true && ((@sides[0] == @sides[1]) && (@sides[0] == @sides[2]))
-        :equilateral
-      elsif valid_tri? == true && ((@sides[0] == @sides [1]) || (@sides[0] == @sides [2]) || (@sides[1] == @sides [2]))
-        :isosceles
-      elsif valid_tri? == true && @sides.uniq == @sides
-        :scalene
-      end
+    elsif self.equilateral?
+      :equilateral
+    elsif self.isosceles?
+      :isosceles
+    elsif self.scalene?
+      :scalene
     end
-  end 
+  end
 
   class TriangleError < StandardError
     def error_msg
