@@ -13,7 +13,7 @@ class Triangle
   def kind #make it easy, use self more like been doing. self is your friend
     if self.invalid? #make sure to define what invalid is
         raise TriangleError
-    elsif self.equilateral?
+    elsif self.equilateral? #I could have put invalid and valid defs all with this but it got messy and didnt pass. I'm doing something wrong syntax wise but could not figure it out. 
       :equilateral
     elsif self.isosceles?
       :isosceles
