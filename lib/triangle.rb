@@ -22,9 +22,9 @@ class Triangle
     end
   end
   
-  def invalid? #if it flags any of this, get the error.
-    if (self.sides.any?{ |side| side <= 0} || self.side1 + self.side2 <= side3 ||
-      self.side2 + self.side3 <= side1 || self.side3 + self.side1 <= side2)
+  def invalid? #if it flags any of this, get the error. make it easy to read and not a clustermess
+    if (self.sides.any?{ |side| side <= 0} || 
+        self.sX + self.sY <= sZ || self.sY + self.sZ <= sX || self.sZ + self.sX <= sY)
       true 
     end
   end
@@ -53,3 +53,5 @@ end
 
 
 #Define :equilateral :isosceles :scalene
+#Define what is a valid and invalid triangle
+#make sure to note sides
