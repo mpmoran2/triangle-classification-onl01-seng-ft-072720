@@ -11,8 +11,8 @@ class Triangle
   end
 
   def kind
-    if valid_triangle? != true
-    raise TriangleError
+    if self.invalid?
+        raise TriangleError
     else
       if valid_tri? == true && ((@sides[0] == @sides[1]) && (@sides[0] == @sides[2]))
         :equilateral
