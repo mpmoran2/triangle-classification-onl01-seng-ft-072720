@@ -16,7 +16,7 @@ class Triangle
   end
 
 
-  def kind()
+  def kind
     if valid_triangle? != true
     raise TriangleError
     else
