@@ -1,8 +1,7 @@
 require 'pry'
 
 class Triangle
-  attr_accessor :equilateral, :isosceles, :scalene
-  attr_reader :sides
+  attr_accessor :sX, :sY, :sZ, :sides
 
   def initialize(sX, sY, sZ)
     @sX = sX
@@ -10,11 +9,6 @@ class Triangle
     @sZ = sZ
     @sides = [sX, sY, sZ]
   end
-
-  def valid_triangle?
-    ((@sides[0] + @sides[1] > @sides[2]) && (@sides[0] + @sides[2] > @sides[1]) && (@sides[1] + @sides[2] > @sides[0])) && @sides.all? {|side| side > 0}
-  end
-
 
   def kind
     if valid_triangle? != true
